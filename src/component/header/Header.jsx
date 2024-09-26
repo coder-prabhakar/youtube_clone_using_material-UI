@@ -26,7 +26,17 @@ const onSearch = (value) => console.log(value);
 
 function Header() {
     return (
-        <Toolbar component="header">
+        <Toolbar 
+        component="header"
+        sx={{
+            width: '100%',
+            position:'fixed',
+            top:'0',
+            left:'0',
+            backgroundColor:'white',
+            zIndex:'100',
+        }}
+        >
 
             {/* Menu Button */}
             <IconButton size="large" color="inherit">

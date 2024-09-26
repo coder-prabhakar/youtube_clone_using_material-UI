@@ -1,3 +1,22 @@
+/* aside > nav */
+aside > nav{
+    height: calc(100vh - 64px);
+    overflow-y: scroll;
+    background-color: white;
+    padding: 0px 5px 12px 12px;
+    position: fixed;
+    top: 64px;
+    left: 0px;
+}
+
+/* Horizontal Line in sidebar */
+aside nav hr{
+    height: 1px;
+    border-width: 0;
+    background-color: rgb(219, 219, 219);
+    margin: 15px 0px;
+}
+
 /* Sidebar Scrollbar Style */
 aside .aside-heading{
     margin: 0;
@@ -18,18 +37,15 @@ aside:hover nav::-webkit-scrollbar-thumb{
     background: rgb(140, 140, 140);
 }
 
-/* aside > nav */
-aside > nav{
-    height: calc(100vh - 64px);
-    overflow-y: scroll;
-    background-color: white;
-    padding: 0px 5px 12px 12px;
-}
 
-/* Horizontal Line in sidebar */
-aside nav hr{
-    height: 1px;
-    border-width: 0;
-    background-color: rgb(219, 219, 219);
-    margin: 15px 0px;
+
+/*------- Media Queries ---------*/
+@media only screen and (max-width: 1300px) {
+    aside{
+        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    }
+
+    aside.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
 }
