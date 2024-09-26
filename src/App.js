@@ -1,15 +1,22 @@
 import './App.css';
+import Header from './component/header/Header';
+import Main from './component/Main';
+import Sidebar from './component/sidebar/Sidebar'
+import Home from './component/home/Home';
+
+// React Router
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>YouTube</h1>
-      <h1 className="h1">YouTube</h1>
-      <p>Home</p>
-      <p>About</p>
-      <p>Subscription</p>
-    </div>
-  );
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path='/' element={<Main sidebar={<Sidebar />} section={<Home />} />}/>
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
 export default App;

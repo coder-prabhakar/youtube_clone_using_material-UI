@@ -4,15 +4,25 @@ body{
     margin: 0;
     padding: 0;
     font-family: "Roboto", Arial, sans-serif;
-    background-color: rgb(238, 238, 238);
 }
 
 *{
     box-sizing: border-box;
 }
 
+button, a{
+    all: unset;
+}
+
 :root {
     --black: black;
     --dark-black: #0f0f0f;
     --lignt-black: #606060;
+    --red: #FF0000;
+}
+
+.main-container{
+    background-color: #f6f6f6;
+    display: grid;
+    grid-template-columns: 240px 1fr;
 }

@@ -1,0 +1,13 @@
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.yt-text{
+    all: unset;
+    font-size: 25px;
+    font-weight: bolder;
+    letter-spacing: -1px;
+}
