@@ -1,5 +1,4 @@
 import React from 'react'
-import './Header.css'
 
 // import icon from Material UI
 import {
@@ -9,12 +8,14 @@ import {
     NotificationsNone,
     AccountCircle,
 } from '@mui/icons-material';
+import SearchIcon from '@mui/icons-material/Search';
 
 import {
     Box,
     Toolbar,
     IconButton,
     Badge,
+    Typography 
 } from '@mui/material';
 
 
@@ -39,35 +40,47 @@ function Header() {
         >
 
             {/* Menu Button */}
-            <IconButton size="large" color="inherit">
+            <IconButton size="large" color="inherit"  sx={{ display: { xs: 'none', md: 'flex' } }}>
                 <Menu/>
             </IconButton>
 
             {/* Youtube Logo */}
             <Toolbar sx={{ marginLeft: '-12px', cursor: 'pointer' }}>
-                <YouTube sx={{ color: '#FF0000',  fontSize: 35  }}/>
+                <YouTube sx={{ color: '#FF0000',  fontSize: {xs: 30, sm: 35}  }}/>
                 
                 <Badge badgeContent='IN'>
-                    <h1 className='yt-text'>
+                    <Typography 
+                    variant="h1"
+                    sx={{
+                        all: 'unset',
+                        fontSize: {xs:'23px', md:'25px'},
+                        fontWeight: 'bolder',
+                        letterSpacing: '-1px'
+                    }}
+                    >
                         YouTube
-                    </h1>
+                    </Typography>
                 </Badge>
             </Toolbar>
 
             <Box sx={{ flexGrow: 1 }} />
 
-            {/* Search Bar */}
-            <Search
-                placeholder="Search"
-                allowClear
-                onSearch={onSearch}
-                size="large"
-                style={{
-                    width: 400,
-                }}
-            />
+            {/* Mobile Search Bar */}
+            <IconButton size="large" sx={{ display: { xs: 'inherit', sm: 'none' } }}>
+                <SearchIcon />
+            </IconButton>
+            {/* Desktop Search Bar */}
+            <Box sx={{width: {xs: '300px', md: '400px'}, display: { xs: 'none', sm: 'inherit', md: 'inherit'}}}>
+                <Search
+                    placeholder="Search"
+                    allowClear
+                    onSearch={onSearch}
+                    size="large"
+                />
+            </Box>
+            
 
-            <Box sx={{ flexGrow: 1 }} />
+            <Box sx={{ flexGrow: {xs: 0, md: 1} }} />
 
             {/* Upload, Notification, and Upload Icon */}
             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
